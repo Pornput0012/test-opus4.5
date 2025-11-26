@@ -1,0 +1,250 @@
+.menu-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  overflow: hidden;
+}
+
+.menu-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  width: 90%;
+}
+
+.game-logo {
+  margin-bottom: 30px;
+}
+
+.game-title {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ffd89b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.title-shadow {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  z-index: -1;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.3);
+  background-clip: unset;
+}
+
+.game-subtitle {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.menu-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+}
+
+.start-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  margin-bottom: 30px;
+}
+
+.start-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+.start-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.button-icon {
+  font-size: 1.2rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.controls-preview {
+  text-align: left;
+}
+
+.controls-preview h3 {
+  color: #888;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.control kbd {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  font-family: monospace;
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: #fff;
+  margin: 0 2px;
+}
+
+.control span {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Background particles */
+.menu-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 50%;
+  animation: float 15s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  width: 15px;
+  height: 15px;
+}
+
+.particle:nth-child(2) {
+  left: 30%;
+  animation-delay: 3s;
+}
+
+.particle:nth-child(3) {
+  left: 50%;
+  animation-delay: 6s;
+  width: 8px;
+  height: 8px;
+}
+
+.particle:nth-child(4) {
+  left: 70%;
+  animation-delay: 9s;
+  width: 12px;
+  height: 12px;
+}
+
+.particle:nth-child(5) {
+  left: 90%;
+  animation-delay: 12s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .game-title {
+    font-size: 2.5rem;
+  }
+  
+  .menu-features {
+    grid-template-columns: 1fr;
+  }
+  
+  .control-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

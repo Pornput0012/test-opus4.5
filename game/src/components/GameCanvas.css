@@ -1,0 +1,8 @@
+.game-canvas {
+  border: 4px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
