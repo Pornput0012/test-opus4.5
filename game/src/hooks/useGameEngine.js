@@ -4,6 +4,19 @@ import { Monster } from '../game/Monster';
 import { LEVELS, getLevelById } from '../game/levels';
 import { CANVAS_WIDTH, CANVAS_HEIGHT, WEAPONS } from '../game/constants';
 
+// Background color mapping for themes
+const THEME_TOP_COLORS = {
+  'Enchanted Forest': '#1a472a',
+  'Dark Cave': '#1a1a2e',
+  'Haunted Castle': '#2c1810',
+  'Volcanic Wasteland': '#4a1a1a',
+  'Sky Temple - Final Battle': '#87CEEB'
+};
+
+const getThemeTopColor = (themeName) => {
+  return THEME_TOP_COLORS[themeName] || '#87CEEB';
+};
+
 // Drawing utility functions (outside of component to avoid re-creation)
 const drawTree = (ctx, x, y) => {
   ctx.fillStyle = '#4a3728';
@@ -60,10 +73,8 @@ const drawBackground = (ctx, levelData, stalactiteHeights, cloudOffsets) => {
   const gradient = ctx.createLinearGradient(0, 0, 0, CANVAS_HEIGHT);
   const theme = levelData.theme;
   
-  gradient.addColorStop(0, theme.background.includes('#1a472a') ? '#1a472a' : 
-                         theme.background.includes('#1a1a2e') ? '#1a1a2e' :
-                         theme.background.includes('#2c1810') ? '#2c1810' :
-                         theme.background.includes('#4a1a1a') ? '#4a1a1a' : '#87CEEB');
+  const topColor = getThemeTopColor(theme.name);
+  gradient.addColorStop(0, topColor);
   gradient.addColorStop(1, theme.groundColor);
   
   ctx.fillStyle = gradient;

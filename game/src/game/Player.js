@@ -294,7 +294,7 @@ export class Player {
 
   drawWeapon(ctx) {
     const weapon = this.currentWeapon;
-    ctx.strokeStyle = weapon.color === '#silver' ? '#C0C0C0' : weapon.color;
+    ctx.strokeStyle = weapon.color;
     ctx.lineWidth = 4;
     
     const weaponX = this.facingRight ? this.x + 35 : this.x + 5;

@@ -24,7 +24,7 @@ export const WEAPONS = {
     damage: 20,
     range: 60,
     attackSpeed: 500,
-    color: '#silver'
+    color: '#C0C0C0'
   },
   AXE: {
     name: 'Battle Axe',
